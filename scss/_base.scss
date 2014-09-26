@@ -2,15 +2,26 @@
 Base Rules
 	A Base rule is applied to an element using an element selector, a descendent selector, or a child selector, along with any pseudoclasses. It doesn’t include any class or ID selectors. It is defining the default styling for how that element should look in all occurrences on the page.
 */
+html {
+    box-sizing: border-box;
+}
 
+*,*:before, *:after {
+    box-sizing: inherit;
+}
+
+main {
+    padding: 0 20px;
+}
+    
 body {
     color: $color;
     //font-family: 'Open Sans', sans-serif;
     @include body-font-regular;
     //font-size: 20px;
-    @include fontSize(20px);
+    @include fontSize(18px);
     line-height: 1.45;
-    margin: 20px auto;
+    margin: 0 auto;
     max-width: 550px;
     width: 100%;
 }
@@ -22,8 +33,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include fontSize(60px);
-    margin-bottom: 84px;
+    @include fontSize(65px);
+    margin-bottom: 20px;
     text-transform: capitalize;
 }
 
@@ -36,11 +47,12 @@ h1 {
 //}
 
 h1 + p {
-    @include fontSize(30px);
+    @include fontSize(25px);
+    margin: 0;
 }
 
 h2 {
-    @include fontSize(44px);
+    @include fontSize(40px);
     margin-top: 50px;
     margin-bottom: 8px;
     text-transform: uppercase;
@@ -52,7 +64,7 @@ h2 + p {
 }
 
 h3 {
-    @include fontSize(34px);
+    @include fontSize(30px);
     margin-top: 34px;
     margin-bottom: 8px;
     text-transform: capitalize;
@@ -63,7 +75,7 @@ h3 + p {
 }
 
 h4 {
-    @include fontSize(24px);
+    @include fontSize(20px);
     margin-top: 34px;
     margin-bottom: 4px;
 }
@@ -117,9 +129,14 @@ p + ul, p + ol {
 }
 
 blockquote {
-    background-color: $background-color;
+    //background-color: $blockquote-color;
+    //color: $blockquote-font-color;
+    border-top: 3px $blockquote-color solid;
+    border-bottom: 3px $blockquote-color solid;
     padding: 16px;
     margin: 0;
+    border-radius: round;
+    @include fontSize(30px);
 }
 
 blockquote p {
@@ -138,4 +155,18 @@ dt {
 
 dd {
     margin: 0 0 10px 0;
+    @include fontSize(15px);
+}
+
+footer {
+    border:block;
+    border-top: 1px navy solid;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+small {
+    @include fontSize(14px);
+    line-height: 1;
+    margin-top: 0;
 }
