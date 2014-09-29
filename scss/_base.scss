@@ -33,9 +33,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    @include fontSize(65px);
+    @include fontSize(70px);
     margin-bottom: 20px;
     text-transform: capitalize;
+    margin-top: 0;
 }
 
 //p:first-of-type {
@@ -53,7 +54,7 @@ h1 + p {
 
 h2 {
     @include fontSize(40px);
-    margin-top: 50px;
+    margin-top: 30px;
     margin-bottom: 8px;
     text-transform: uppercase;
     //border-bottom: 1px solid $color;
@@ -65,7 +66,7 @@ h2 + p {
 
 h3 {
     @include fontSize(30px);
-    margin-top: 34px;
+    margin-top: 20px;
     margin-bottom: 8px;
     text-transform: capitalize;
 }
@@ -135,8 +136,7 @@ blockquote {
     border-bottom: 3px $blockquote-color solid;
     padding: 16px;
     margin: 0;
-    border-radius: round;
-    @include fontSize(30px);
+    @include fontSize(25px);
 }
 
 blockquote p {
@@ -169,4 +169,14 @@ small {
     @include fontSize(14px);
     line-height: 1;
     margin-top: 0;
+}
+
+i {
+    @include body-font-italic;
+}
+
+img {
+    width: 100%;
+    max-width: 540px;
+
 }
